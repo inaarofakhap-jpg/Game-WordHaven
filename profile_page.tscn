@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://c1x5v2bxxrw31"]
+
+[ext_resource type="Script" uid="uid://cdyhdmompr50m" path="res://profile_page.gd" id="1_p7nr1"]
+[ext_resource type="Texture2D" uid="uid://d1jn1jw0onynv" path="res://assets/home.png" id="2_p7nr1"]
+[ext_resource type="Texture2D" uid="uid://byxqfgjo364ss" path="res://assets/bgaboutgame.png" id="2_sqi8p"]
+[ext_resource type="FontFile" uid="uid://bcbl3hwpr6eyo" path="res://assets/poti.ttf" id="5_6ob2x"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dgbxw"]
+texture = ExtResource("2_sqi8p")
+
+[node name="ProfilePage" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p7nr1")
+
+[node name="BgAbout" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_dgbxw")
+
+[node name="Home" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1243.0
+offset_top = 12.0
+offset_right = 1909.0
+offset_bottom = 386.0
+scale = Vector2(0.168354, 0.17193)
+texture_normal = ExtResource("2_p7nr1")
+
+[node name="AboutCreator" type="Label" parent="."]
+layout_mode = 0
+offset_left = 547.0
+offset_top = 47.0
+offset_right = 825.0
+offset_bottom = 147.0
+theme_override_colors/font_color = Color(1, 0.988235, 0.713726, 1)
+theme_override_colors/font_outline_color = Color(0.384314, 0.247059, 0.215686, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("5_6ob2x")
+theme_override_font_sizes/font_size = 100
+text = "About creator"
+
+[connection signal="pressed" from="Home" to="." method="_on_home_pressed"]
